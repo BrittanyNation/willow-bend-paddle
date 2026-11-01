@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willow Bend Paddle Co. — Kayak, Canoe &amp; Paddleboard Rentals</title>
+<meta name="description" content="Willow Bend Paddle Co. is a fictional river rental studio. Browse the fleet, filter by craft, and book a kayak, canoe, or paddleboard with honest prices and real working booking.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Willow Bend Paddle Co. — Paddle Rentals &amp; River Trips">
+<meta property="og:description" content="A fully functional rental booking website with a real Node.js + Express back end in the repo. Browse the fleet, filter, and book — every button works.">
+<meta property="og:url" content="https://brittanynation.github.io/willow-bend-paddle/">
+<meta property="og:image" content="https://brittanynation.github.io/willow-bend-paddle/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🌊 Willow Bend <span>Paddle Co.</span></a>
+  <nav>
+    <a href="index.html" class="active">Fleet</a>
+    <a href="trips.html">Guided Trips</a>
+    <a href="book.html" class="nav-cta">Book a Paddle</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Bend Creek · Open April to October</p>
+    <h1>Get on the river, without owning a thing.</h1>
+    <p class="lede">Kayaks, canoes, and paddleboards ready at the dock — paddles, life jackets, and a dry bag included in every rental. Pick your craft below and book in about a minute.</p>
+    <div class="hero-actions">
+      <a class="btn btn-yellow" href="#fleet">Browse the fleet</a>
+      <a class="btn btn-ghost" href="trips.html">See guided trips</a>
+    </div>
+    <ul class="trust-row">
+      <li><strong>9</strong> craft in the fleet</li>
+      <li><strong>$28</strong> half-day from</li>
+      <li><strong>Free</strong> life jackets, always</li>
+    </ul>
+  </div>
+  <div class="hero-card" aria-hidden="true">
+    <div class="river-scene">
+      <div class="sun"></div>
+      <div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div>
+      <div class="kayak">🛶</div>
+    </div>
+    <p class="hero-card-note">Today at the dock: calm water, light breeze, last launch at 4:00 PM.</p>
+  </div>
+</section>
+
+<p id="data-mode" class="data-mode" role="status">Checking where the fleet data is coming from…</p>
+
+<main id="fleet" class="wrap">
+  <div class="section-head">
+    <h2>The fleet</h2>
+    <p>Every price is the full price for the craft — paddles and life jackets included. Filter, search, and sort to find your fit, then book the one you want.</p>
+  </div>
+
+  <div class="controls">
+    <div class="chips" role="group" aria-label="Filter by craft type">
+      <button class="chip active" data-filter="all">All craft</button>
+      <button class="chip" data-filter="kayak">Kayaks</button>
+      <button class="chip" data-filter="canoe">Canoes</button>
+      <button class="chip" data-filter="sup">Paddleboards</button>
+    </div>
+    <label class="search-box">Search
+      <input id="search" type="search" placeholder="Try “tandem” or “fishing”…">
+    </label>
+    <label class="sort-box">Sort
+      <select id="sort">
+        <option value="featured">Featured</option>
+        <option value="price-low">Price: low to high</option>
+        <option value="price-high">Price: high to low</option>
+        <option value="capacity">Seats: most first</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </label>
+  </div>
+
+  <p id="result-count" class="result-count" role="status"></p>
+  <div id="fleet-grid" class="fleet-grid"></div>
+  <p id="fleet-empty" class="empty-state" hidden>No craft match that search. Try a different word, or clear the filter to see the whole fleet.</p>
+
+  <section class="how">
+    <h2>How a rental day works</h2>
+    <ol class="how-steps">
+      <li><strong>1. Book online.</strong> Pick a craft, a day, and a launch time. You get a booking reference right away — no account, no phone call.</li>
+      <li><strong>2. Show up at the dock.</strong> We fit your life jacket, walk the put-in, and point out the best lunch rocks on the bend.</li>
+      <li><strong>3. Paddle and return.</strong> Float back to the dock by your return time. Late returns are $10 per half hour, stated here so there are no surprises.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p><strong>Willow Bend Paddle Co.</strong> — a fictional rental studio, designed and built as original portfolio work.</p>
+  <p>Front-end design and build by Brittany Nation · Sketch &amp; Webflow workflow, hand-built in HTML, CSS, and JavaScript, with a Node.js + Express back end in this repo.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  // Page entry point: the fleet explorer lives in app.js so the booking
+  // page can reuse the same data-loading code (see COURSE NOTES in app.js).
+  WillowBend.initFleetPage();
+</script>
+</body>
+</html>
