@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Paddle — Willow Bend Paddle Co.</title>
+<meta name="description" content="Book a kayak, canoe, or paddleboard at Willow Bend Paddle Co. Live prices, honest booked-out launch times, validated form, and a booking reference on confirmation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book a Paddle — Willow Bend Paddle Co.">
+<meta property="og:description" content="A working rental booking flow with live totals, validated inputs, and a real Node.js + Express booking endpoint in the repo.">
+<meta property="og:url" content="https://brittanynation.github.io/willow-bend-paddle/book.html">
+<meta property="og:image" content="https://brittanynation.github.io/willow-bend-paddle/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🌊 Willow Bend <span>Paddle Co.</span></a>
+  <nav>
+    <a href="index.html">Fleet</a>
+    <a href="trips.html">Guided Trips</a>
+    <a href="book.html" class="nav-cta active">Book a Paddle</a>
+  </nav>
+</header>
+
+<main class="wrap narrow">
+  <div class="section-head">
+    <h1>Book a paddle</h1>
+    <p>Choose a craft and a launch time, and the summary updates as you go. Closed Mondays for river rest — the calendar will tell you kindly if you pick one.</p>
+  </div>
+  <p id="data-mode" class="data-mode" role="status">Checking where the fleet data is coming from…</p>
+
+  <div class="booking-layout">
+    <form id="booking-form" novalidate>
+      <fieldset>
+        <legend>1 · Your craft</legend>
+        <label>Craft
+          <select id="craft" required></select>
+        </label>
+        <div class="two-col">
+          <label>How many?
+            <input id="qty" type="number" min="1" max="6" value="1">
+          </label>
+          <label>Trip length
+            <select id="duration">
+              <option value="half">Half day (4 hours)</option>
+              <option value="full">Full day (8 hours)</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2 · Day &amp; launch time</legend>
+        <label>Date
+          <input id="date" type="date" required>
+        </label>
+        <p class="slot-label">Launch times for that day <span class="slot-note">(greyed-out times are honestly booked out)</span></p>
+        <div id="slots" class="slots" role="group" aria-label="Launch times"></div>
+        <p id="slot-error" class="field-error" hidden></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>3 · Extras</legend>
+        <label class="check"><input type="checkbox" class="addon" value="drybag" data-price="5"> Waterproof phone dry bag — $5 each</label>
+        <label class="check"><input type="checkbox" class="addon" value="cooler" data-price="8"> Floating cooler — $8 each</label>
+        <label class="check"><input type="checkbox" class="addon" value="seat" data-price="6"> Padded seat upgrade — $6 each</label>
+        <p class="fine">Life jackets and paddles are always free and always included.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>4 · Who is paddling</legend>
+        <label>Full name <input id="name" type="text" autocomplete="name" required></label>
+        <label>Email <input id="email" type="email" autocomplete="email" required></label>
+        <label>Phone <input id="phone" type="tel" autocomplete="tel" required></label>
+        <p id="form-error" class="field-error" hidden></p>
+        <button class="btn btn-yellow btn-big" type="submit">Confirm booking</button>
+        <p class="fine">No payment is taken on this demo site. On the live Express server, this form posts to <code>POST /api/bookings</code>; on GitHub Pages it saves your booking in your own browser instead, and says so plainly.</p>
+      </fieldset>
+    </form>
+
+    <aside class="summary" aria-live="polite">
+      <h2>Your booking</h2>
+      <dl>
+        <div><dt>Craft</dt><dd id="sum-craft">—</dd></div>
+        <div><dt>When</dt><dd id="sum-when">Pick a date &amp; time</dd></div>
+        <div><dt>Rental</dt><dd id="sum-rental">$0</dd></div>
+        <div><dt>Extras</dt><dd id="sum-addons">$0</dd></div>
+        <div><dt>Tax (7%)</dt><dd id="sum-tax">$0</dd></div>
+        <div class="sum-total"><dt>Total due at dock</dt><dd id="sum-total">$0</dd></div>
+        <div><dt>Due today (20% hold)</dt><dd id="sum-deposit">$0</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <section id="confirmation" class="confirmation" hidden>
+    <h2>🎉 You are booked in!</h2>
+    <p id="conf-text"></p>
+    <p>Booking reference: <strong id="conf-ref"></strong></p>
+    <p id="conf-save-note" class="fine"></p>
+    <button id="book-again" class="btn btn-ghost-dark" type="button">Make another booking</button>
+  </section>
+
+  <section id="my-bookings" class="my-bookings" hidden>
+    <h2>Bookings saved in this browser</h2>
+    <ul id="booking-list"></ul>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p><strong>Willow Bend Paddle Co.</strong> — a fictional rental studio, designed and built as original portfolio work.</p>
+  <p>Front-end design and build by Brittany Nation · HTML, CSS, JavaScript + Node.js / Express.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>WillowBend.initBookingPage();</script>
+</body>
+</html>
