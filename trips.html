@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guided Trips — Willow Bend Paddle Co.</title>
+<meta name="description" content="Guided river trips at Willow Bend Paddle Co.: sunrise floats, family bends, and a full-moon paddle, each with honest group sizes, prices, and a working booking path.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guided Trips — Willow Bend Paddle Co.">
+<meta property="og:description" content="Three guided trips with real prices, group sizes, FAQs, and booking that carries your trip choice into the booking form.">
+<meta property="og:url" content="https://brittanynation.github.io/willow-bend-paddle/trips.html">
+<meta property="og:image" content="https://brittanynation.github.io/willow-bend-paddle/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🌊 Willow Bend <span>Paddle Co.</span></a>
+  <nav>
+    <a href="index.html">Fleet</a>
+    <a href="trips.html" class="active">Guided Trips</a>
+    <a href="book.html" class="nav-cta">Book a Paddle</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="section-head">
+    <h1>Guided trips</h1>
+    <p>A guide in the lead boat, a cooler of lemonade in the last one. Booking a trip uses the same booking form — your trip is preselected when you arrive.</p>
+  </div>
+
+  <div class="trip-grid">
+    <article class="trip-card">
+      <div class="trip-art sunrise">🌅</div>
+      <h2>Sunrise Bend Float</h2>
+      <p class="trip-meta">2 hours · Up to 8 paddlers · Ages 10+</p>
+      <p>Launch at dawn, coffee in hand, and watch the herons start their day. Our calmest water and our most-photographed trip.</p>
+      <p class="trip-price">$45 <span>per person</span></p>
+      <a class="btn btn-yellow" href="book.html?craft=sunrise-trip">Book this trip</a>
+    </article>
+    <article class="trip-card">
+      <div class="trip-art family">🦆</div>
+      <h2>Family Bend &amp; Picnic</h2>
+      <p class="trip-meta">3 hours · Up to 12 paddlers · Ages 5+</p>
+      <p>A slow loop with a shaded picnic stop halfway. Tandem canoes keep wiggly paddlers between two grown-ups, and the guide carries the sandwiches.</p>
+      <p class="trip-price">$38 <span>per person</span></p>
+      <a class="btn btn-yellow" href="book.html?craft=family-trip">Book this trip</a>
+    </article>
+    <article class="trip-card">
+      <div class="trip-art moon">🌙</div>
+      <h2>Full-Moon Paddle</h2>
+      <p class="trip-meta">2 hours · Up to 10 paddlers · Ages 14+</p>
+      <p>One Friday a month, glow sticks on every bow. Headlamps provided, stargazing stop included, hot cider at the dock after.</p>
+      <p class="trip-price">$52 <span>per person</span></p>
+      <a class="btn btn-yellow" href="book.html?craft=moon-trip">Book this trip</a>
+    </article>
+  </div>
+
+  <section class="faq">
+    <h2>Questions, answered plainly</h2>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false">Do I need experience to rent or join a trip?</button>
+      <div class="acc-body" hidden>No. Bend Creek is a slow, forgiving river. Every booking starts with a five-minute dock lesson, and guided trips have a guide in the lead boat the whole way.</div>
+    </div>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false">What happens if it rains?</button>
+      <div class="acc-body" hidden>Light rain: we paddle, it is honestly lovely. Lightning or high water: we cancel, you choose a new date or a full refund of your hold — your call, not ours.</div>
+    </div>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false">Can kids paddle?</button>
+      <div class="acc-body" hidden>Yes. Kids 5 and up can ride in a tandem canoe with an adult, kids 10 and up can take a solo kayak on guided trips, and life jackets in kid sizes are free and fitted at the dock.</div>
+    </div>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false">What should I bring?</button>
+      <div class="acc-body" hidden>Sunscreen, water, and shoes that can get wet. We provide the craft, paddles, life jackets, and one shared dry bag per booking. Leave valuables in your car — the river keeps what it catches.</div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>The River Letter</h2>
+    <p>One email a month: water levels, moon-paddle dates, and first dibs on holiday weekends.</p>
+    <form id="newsletter-form" novalidate>
+      <label>Email <input id="nl-email" type="email" placeholder="you@example.com"></label>
+      <button class="btn btn-yellow" type="submit">Join the letter</button>
+      <p id="nl-msg" class="fine" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p><strong>Willow Bend Paddle Co.</strong> — a fictional rental studio, designed and built as original portfolio work.</p>
+  <p>Front-end design and build by Brittany Nation · HTML, CSS, JavaScript + Node.js / Express.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>WillowBend.initTripsPage();</script>
+</body>
+</html>
