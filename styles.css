@@ -1,0 +1,109 @@
+/* Willow Bend Paddle Co. — palette:
+   River Deep #1B4965 · Aqua #62B6CB · Kayak Yellow #FFC857 ·
+   Coral Launch #EE6C4D · Foam #F7FBFC · Ink #14213D · Sand Bank #EFE6D8 */
+:root{
+  --river:#1B4965; --aqua:#62B6CB; --yellow:#FFC857; --coral:#EE6C4D;
+  --foam:#F7FBFC; --ink:#14213D; --sand:#EFE6D8; --line:#D7E4E8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Archivo",system-ui,sans-serif;background:var(--foam);color:var(--ink);line-height:1.55}
+h1,h2,h3{font-family:"Fraunces",serif;line-height:1.12;margin:0 0 .5rem}
+a{color:var(--river)}
+.site-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 5vw;background:var(--river);position:sticky;top:0;z-index:10}
+.brand{color:#fff;text-decoration:none;font-family:"Fraunces",serif;font-weight:900;font-size:1.25rem}
+.brand span{color:var(--yellow)}
+.site-head nav{display:flex;gap:1.1rem;align-items:center}
+.site-head nav a{color:#EAF6F9;text-decoration:none;font-weight:600}
+.site-head nav a.active{text-decoration:underline;text-underline-offset:4px}
+.nav-cta{background:var(--yellow);color:var(--ink)!important;padding:.5rem 1rem;border-radius:999px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;padding:4rem 5vw 2.5rem;background:linear-gradient(160deg,var(--river),#12344A);color:#fff}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);font-weight:800;font-size:.8rem}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+.lede{font-size:1.12rem;max-width:34rem}
+.btn{display:inline-block;border:none;cursor:pointer;text-decoration:none;font-weight:800;padding:.75rem 1.4rem;border-radius:999px;font-size:1rem}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{background:#FFD67D}
+.btn-ghost{border:2px solid #fff;color:#fff;background:transparent}
+.btn-ghost-dark{border:2px solid var(--river);color:var(--river);background:transparent}
+.btn-big{width:100%;font-size:1.1rem;padding:1rem}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.2rem 0}
+.trust-row{display:flex;gap:1.6rem;list-style:none;padding:0;margin:1rem 0 0;flex-wrap:wrap}
+.trust-row strong{color:var(--yellow);font-size:1.2rem}
+.hero-card{background:var(--foam);color:var(--ink);border-radius:20px;padding:1.2rem;align-self:center}
+.river-scene{position:relative;height:190px;border-radius:14px;background:linear-gradient(180deg,var(--aqua),var(--river));overflow:hidden}
+.sun{position:absolute;top:18px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--yellow)}
+.wave{position:absolute;left:-10%;width:120%;height:26px;border-radius:50%;background:rgba(255,255,255,.28)}
+.w1{bottom:58px}.w2{bottom:34px;background:rgba(255,255,255,.2)}.w3{bottom:10px;background:rgba(255,255,255,.14)}
+.kayak{position:absolute;bottom:44px;left:38%;font-size:3.2rem;transform:rotate(-6deg)}
+.hero-card-note{margin:.8rem .2rem 0;font-weight:600}
+.data-mode{margin:1rem 5vw 0;padding:.7rem 1rem;border-radius:12px;background:var(--sand);font-weight:600}
+.data-mode.live{background:#DCF2E3}
+.wrap{padding:2rem 5vw 3rem;max-width:1200px;margin:0 auto}
+.wrap.narrow{max-width:1060px}
+.section-head{max-width:44rem;margin-bottom:1.4rem}
+.section-head h1{font-size:2.4rem}.section-head h2{font-size:2rem}
+.controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:end;margin-bottom:1rem}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{border:2px solid var(--river);background:#fff;color:var(--river);font-weight:700;padding:.5rem 1rem;border-radius:999px;cursor:pointer}
+.chip.active{background:var(--river);color:#fff}
+.search-box,.sort-box{display:flex;flex-direction:column;font-weight:700;gap:.3rem}
+input,select,textarea{font:inherit;padding:.6rem .7rem;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:3px solid var(--aqua);border-color:var(--river)}
+.result-count{font-weight:700;color:var(--river)}
+.fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.craft-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.2rem;display:flex;flex-direction:column;gap:.35rem}
+.craft-art{font-size:2.4rem;background:linear-gradient(140deg,var(--aqua),#BFE6F0);border-radius:12px;text-align:center;padding:1rem}
+.craft-tag{color:var(--coral);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem;margin:.4rem 0 0}
+.craft-card h3{margin:0}
+.craft-meta{font-weight:700;color:var(--river)}
+.craft-price{font-size:1.15rem;font-weight:800}
+.craft-price span{font-size:.85rem;font-weight:600;color:#5A6B73}
+.craft-card .btn{margin-top:auto;text-align:center}
+.empty-state{background:#fff;border:2px dashed var(--aqua);border-radius:14px;padding:1.2rem;font-weight:600}
+.how{margin-top:3rem;background:#fff;border-radius:18px;padding:1.6rem;border:1px solid var(--line)}
+.how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;padding-left:1.2rem}
+.booking-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:1.6rem;align-items:start}
+fieldset{border:1px solid var(--line);background:#fff;border-radius:16px;padding:1.2rem;margin:0 0 1.2rem;display:flex;flex-direction:column;gap:.8rem}
+legend{font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;padding:0 .4rem}
+label{display:flex;flex-direction:column;gap:.3rem;font-weight:700}
+label.check{flex-direction:row;align-items:center;gap:.6rem;font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.slots{display:flex;gap:.5rem;flex-wrap:wrap}
+.slot{border:2px solid var(--river);background:#fff;color:var(--river);font-weight:700;border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.slot.selected{background:var(--coral);border-color:var(--coral);color:#fff}
+.slot:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.slot-label{font-weight:700;margin:0}.slot-note{font-weight:400;color:#5A6B73}
+.field-error{background:#FDECE8;color:#8F2D18;border-radius:10px;padding:.7rem 1rem;font-weight:700}
+.fine{font-size:.9rem;color:#5A6B73}
+.summary{background:var(--river);color:#fff;border-radius:18px;padding:1.4rem;position:sticky;top:96px}
+.summary dl{margin:0;display:flex;flex-direction:column;gap:.55rem}
+.summary dl div{display:flex;justify-content:space-between;gap:1rem}
+.summary dt{opacity:.85}.summary dd{margin:0;font-weight:800;text-align:right}
+.sum-total{border-top:2px solid var(--yellow);padding-top:.6rem;font-size:1.12rem}
+.confirmation{background:#DCF2E3;border-radius:18px;padding:1.6rem;margin-top:1.5rem}
+.my-bookings{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.2rem;margin-top:1.5rem}
+.trip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.trip-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.trip-art{font-size:2.6rem;text-align:center;padding:1.1rem;border-radius:12px}
+.trip-art.sunrise{background:linear-gradient(140deg,var(--yellow),#FFE3A3)}
+.trip-art.family{background:linear-gradient(140deg,var(--aqua),#CDEFF6)}
+.trip-art.moon{background:linear-gradient(140deg,var(--river),#3E6E8E)}
+.trip-meta{font-weight:800;color:var(--river)}
+.trip-price{font-size:1.5rem;font-weight:800}.trip-price span{font-size:.9rem;font-weight:600}
+.trip-card .btn{margin-top:auto;text-align:center}
+.faq{margin-top:3rem}
+.accordion{border:1px solid var(--line);background:#fff;border-radius:12px;margin-bottom:.7rem;overflow:hidden}
+.acc-head{width:100%;text-align:left;background:none;border:none;font:inherit;font-weight:800;padding:1rem 1.2rem;cursor:pointer;color:var(--ink)}
+.acc-body{padding:0 1.2rem 1.1rem}
+.newsletter{margin-top:2.5rem;background:var(--sand);border-radius:18px;padding:1.6rem}
+.newsletter form{display:flex;gap:.8rem;flex-wrap:wrap;align-items:end}
+.msg-ok{color:#1D6B3C;font-weight:700}.msg-error{color:#8F2D18;font-weight:700}
+.site-foot{background:var(--ink);color:#D9E6EC;padding:2rem 5vw;margin-top:1rem}
+.site-foot p{margin:.3rem 0}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .booking-layout{grid-template-columns:1fr}
+  .summary{position:static}
+  .site-head{flex-direction:column;align-items:flex-start}
+  .two-col{grid-template-columns:1fr}
+}
