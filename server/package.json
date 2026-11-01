@@ -1,0 +1,1 @@
+{"dependencies":{"express":"^4.19.2"},"description":"Node.js + Express back end for Willow Bend Paddle Co. — course-track step 2 (Full-Stack Web Development Bootcamp).","main":"server.js","name":"willow-bend-paddle-server","scripts":{"start":"node server.js"},"version":"1.0.0"}
